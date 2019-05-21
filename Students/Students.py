@@ -25,3 +25,8 @@ for man in data:
 
 print('Men:    ', sumMale)
 print('Female: ', sumFemale)
+####
+response = requests.get('http://svatky.adresa.info/json')
+#names = namefile.read()
+names = json.loads(response.text)
+print(names)
