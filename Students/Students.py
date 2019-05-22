@@ -30,3 +30,11 @@ response = requests.get('http://svatky.adresa.info/json')
 #names = namefile.read()
 names = json.loads(response.text)
 print(names)
+for name in names:
+    print('Dne: ' + name['date'] + ' svatek slavi: ' + name['name']) 
+##
+response = requests.get('http://svatky.adresa.info/json?date=3103')
+today = json.loads(response.text)
+print(today)
+for day in today:
+    print('Dne: ' + day['date'] + ' svatek slavi: ' + day['name'])
